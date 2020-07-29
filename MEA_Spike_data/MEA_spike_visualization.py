@@ -14,25 +14,24 @@ import pandas as pd
 data_file = pd.read_csv('MEA_Data_Cortex.csv')
 
 #Here you define the trace number with a number between 5 and 500. 
-trace1=str(input('input trace number: '))
-trace2=str(input('input trace number: '))
-trace3=str(input('input trace number: '))
-trace4=str(input('input trace number: '))
+trace1 = input('input trace number: ')
+trace2 = input('input trace number: ')
+trace3 = input('input trace number: ')
+trace4 = input('input trace number: ')
 
-x1 = data_file['fastLine' + trace1 +" " + 'Time [ms]']
-y1 = data_file['fastLine' + trace1 + " "+ 'Voltage [µV]']
+x1 = data_file[f"fastLine{trace1} Time [ms]"]
+y1 = data_file[f'fastLine{trace1} Voltage [µV]']
 
-x2 = data_file['fastLine' + trace2 +" " + 'Time [ms]']
-y2 = data_file['fastLine' + trace2 + " "+ 'Voltage [µV]']
+x2 = data_file[f"fastLine{trace2} Time [ms]"]
+y2 = data_file[f'fastLine{trace2} Voltage [µV]']
 
-x3 = data_file['fastLine' + trace3 +" " + 'Time [ms]']
-y3 = data_file['fastLine' + trace3 + " "+ 'Voltage [µV]']
+x3 = data_file[f"fastLine{trace3} Time [ms]"]
+y3 = data_file[f'fastLine{trace3} Voltage [µV]']
 
-x4 = data_file['fastLine' + trace4 +" " + 'Time [ms]']
-y4 = data_file['fastLine' + trace4 + " "+ 'Voltage [µV]']
+x4 = data_file[f"fastLine{trace4} Time [ms]"]
+y4 = data_file[f'fastLine{trace4} Voltage [µV]']
 
 
-#plt.style.use('fivethirtyeight')
 plt.style.use('seaborn-darkgrid')
 my_dpi=96
 plt.figure(figsize=(480/my_dpi, 480/my_dpi), dpi=my_dpi)
@@ -53,4 +52,7 @@ plt.ylabel('Voltage (µV)')
 
 
 #prints out pdf file with the trace numbers
-plt.savefig("trace" + " " + trace1 +"_" +trace2+"_"+trace3 + "_" +trace4+ '.pdf')
+plt.savefig(f'trace {trace1}_{trace2}_{trace3}_{trace4}.pdf')
+
+
+
