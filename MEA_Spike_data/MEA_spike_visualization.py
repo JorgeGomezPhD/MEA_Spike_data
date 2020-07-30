@@ -10,9 +10,9 @@ Created on Thu Aug  2 19:09:51 2018
 import matplotlib.pyplot as plt
 import pandas as pd
 
+
 #Defines data file and brings in csv file
 data_file = pd.read_csv('MEA_Data_Cortex.csv')
-
 num_trace = int(input("How many traces between 1-4? "))  # how many traces does user want to print out.
 
 # sets up the plot style
@@ -21,7 +21,8 @@ my_dpi = 96
 plt.figure(figsize=(480 / my_dpi, 480 / my_dpi), dpi=my_dpi)
 plt.figure(1)
 # Add title and axis names
-plt.title('Single spike from cortical neurons')
+# plt.title('Single spike from cortical neurons')
+plt.title(input("What is the title of the graph? "))
 plt.xlabel('Time (ms)')
 plt.ylabel('Voltage (µV)')
 
