@@ -21,7 +21,6 @@ my_dpi = 96
 plt.figure(figsize=(480 / my_dpi, 480 / my_dpi), dpi=my_dpi)
 plt.figure(1)
 # Add title and axis names
-# plt.title('Single spike from cortical neurons')
 plt.title(input("What is the title of the graph? "))
 plt.xlabel('Time (ms)')
 plt.ylabel('Voltage (µV)')
@@ -84,6 +83,3 @@ for number in range(num_trace):
         plt.legend()
         plt.savefig(f'trace_{trace1}_{trace2}_{trace3}_{trace4}.pdf')
         break
-
-
-
