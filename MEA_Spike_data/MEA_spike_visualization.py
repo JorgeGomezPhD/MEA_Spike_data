@@ -20,10 +20,6 @@ plt.style.use('seaborn-darkgrid')
 my_dpi = 96
 plt.figure(figsize=(480 / my_dpi, 480 / my_dpi), dpi=my_dpi)
 plt.figure(1)
-# Add title and axis names
-plt.title(input("What is the title of the graph? "))
-plt.xlabel('Time (ms)')
-plt.ylabel('Voltage (µV)')
 
 number = 0
 for number in range(num_trace):
@@ -32,8 +28,6 @@ for number in range(num_trace):
         x1 = data_file[f"fastLine{trace1} Time [ms]"]  # defines x
         y1 = data_file[f'fastLine{trace1} Voltage [µV]']  # and y variable.
         plt.plot(x1, y1, label="Trace " + trace1, color='red', linewidth=1.5)  # sets up x and y to be plotted.
-        plt.legend()  # sets up figure legend.
-        plt.savefig(f'trace_{trace1}.pdf')  # prints out pdf file with the trace numbers
         break
     elif num_trace == 2:
         trace1 = input('input trace number: ')
@@ -44,8 +38,6 @@ for number in range(num_trace):
         y2 = data_file[f'fastLine{trace2} Voltage [µV]']
         plt.plot(x1, y1, label="Trace " + trace1, color='red', linewidth=1.5)
         plt.plot(x2, y2, label="Trace " + trace2, color='blue', linewidth=1.5)
-        plt.legend()
-        plt.savefig(f'trace_{trace1}_{trace2}.pdf')
         break
     elif num_trace == 3:
         trace1 = input('input trace number: ')
@@ -60,8 +52,6 @@ for number in range(num_trace):
         plt.plot(x1, y1, label="Trace " + trace1, color='red', linewidth=1.5)
         plt.plot(x2, y2, label="Trace " + trace2, color='blue', linewidth=1.5)
         plt.plot(x3, y3, label="Trace " + trace3, color='green', linewidth=1.5)
-        plt.legend()
-        plt.savefig(f'trace_{trace1}_{trace2}_{trace3}.pdf')
         break
     else:
         trace1 = input('input trace number: ')
@@ -80,6 +70,11 @@ for number in range(num_trace):
         plt.plot(x2, y2, label="Trace " + trace2, color='blue', linewidth=1.5)
         plt.plot(x3, y3, label="Trace " + trace3, color='green', linewidth=1.5)
         plt.plot(x4, y4, label="Trace " + trace4, color='black', linewidth=1.5)
-        plt.legend()
-        plt.savefig(f'trace_{trace1}_{trace2}_{trace3}_{trace4}.pdf')
         break
+
+# Add title and axis names
+plt.title(input("What is the title of the graph? "))
+plt.xlabel('Time (ms)')
+plt.ylabel('Voltage (µV)')
+plt.legend() # sets up figure legend.
+plt.savefig(input('Name your pdf: ')+'.pdf')# naming pdf
