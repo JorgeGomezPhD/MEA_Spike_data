@@ -5,6 +5,11 @@ import pandas as pd
 data_file = pd.read_csv('MEA_Data_Cortex.csv')
 num_trace = int(input("How many traces between 1-4? "))  # how many traces does user want to print out.
 
+plt.style.use('seaborn-darkgrid')
+my_dpi = 96
+plt.figure(figsize=(480 / my_dpi, 480 / my_dpi), dpi=my_dpi)
+plt.figure(1)
+
 
 def plot_leg():
     plt.legend()  # sets up figure legend.
